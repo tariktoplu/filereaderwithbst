@@ -17,16 +17,6 @@ public:
         front = back = NULL;
         length = 0;
     }
-    int getSize()
-    {
-        return length;
-    }
-
-    int count() const
-    {
-        return length;
-    }
-
     bool isEmpty() const
     {
         return length == 0;

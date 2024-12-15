@@ -111,9 +111,9 @@ int main()
             }
         }
         else if (secim == 'w' || secim == 'W')
-        {                                             // Aynalama işlemini yap
-            BST *tree = list->getNodeAt(index)->tree; // Seçilen düğümün ağacını al
-            tree->mirror();                           // Ağacı aynala
+        {
+            BST *tree = list->getNodeAt(index)->tree;
+            tree->mirror();
         }
     }
     delete list;

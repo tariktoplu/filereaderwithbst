@@ -13,16 +13,9 @@ private:
     int size;
 
     void SearchAndAdd(Node *&, const char &, int);
-
     bool SearchAndDelete(Node *&, const char &);
     bool DeleteNode(Node *&);
-    void inorder(Node *);
-
-    void preorder(Node *);
-    void postorder(Node *);
-
     void PrintLevel(Node *, int);
-    bool Search(Node *subNode, const char &);
 
 public:
     int Height(Node *);
@@ -39,15 +32,9 @@ public:
     bool isEmpty() const;
     void Add(const char &);
     void Delete(const char &);
-    void inorder();
-    void preorder();
-    void postorder();
+
     void levelorder();
-    int returnLevel(Node *, int);
     int Height();
-    bool Search(const char &);
-    void printTree();
-    void printTreeHelper(Node *, int);
     void Clear();
     ~BST();
     Node *getRoot() const;

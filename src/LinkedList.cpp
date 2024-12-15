@@ -2,9 +2,6 @@
 #include "../include/queue.hpp"
 #include <cmath>
 #include <iomanip>
-/*
-bellek sızıntısı var mı bakılacak
-yıkıcılar düzenlenecek */
 
 LinkedList::LinkedList() : head(nullptr), last(head), size(0) {}
 
@@ -36,18 +33,6 @@ void LinkedList::ilkdegerYaz(int deger)
 
     cout << setw(10) << dugum;
 }
-void LinkedList::ikincidegerYaz(int deger)
-{
-
-    for (int i = 0; i < 5; i++)
-    {
-        cout << " ";
-    }
-
-    ListNode *dugum = getNodeAt(deger);
-
-    cout << setw(10) << dugum;
-}
 void LinkedList::ucuncudegerYaz(int deger)
 {
 
@@ -63,7 +48,7 @@ void LinkedList::ucuncudegerYaz(int deger)
 
 void LinkedList::satirCiz(int startIndex, int maxCount)
 {
-    int visibleNodes = std::min(size - startIndex, maxCount); // Gösterilecek düğüm sayısı
+    int visibleNodes = std::min(size - startIndex, maxCount);
 
     for (int i = 0; i < visibleNodes; i++)
     {
@@ -72,9 +57,8 @@ void LinkedList::satirCiz(int startIndex, int maxCount)
 }
 void LinkedList::isaretYaz(int index, int startIndex)
 {
-    int localIndex = index - startIndex; // Görünüm başlangıcına göre işaret pozisyonu
+    int localIndex = index - startIndex;
 
-    // İşaret için boşlukları yazdır
     for (int i = 0; i < localIndex; i++)
     {
         for (int j = 0; j < 7; j++)
@@ -84,7 +68,6 @@ void LinkedList::isaretYaz(int index, int startIndex)
         cout << "        ";
     }
 
-    // İşaret çizgisi
     for (int i = 0; i < 5; i++)
     {
         cout << " ";
@@ -95,58 +78,53 @@ void LinkedList::isaretYaz(int index, int startIndex)
 void LinkedList::bagliListeYaz(int startIndex)
 {
     int maxCount = 10;
-    // Çizgi yazdır
+
     satirCiz(startIndex, maxCount);
     cout << endl;
 
-    // Başlangıç indeksinden itibaren 10 düğümü yazdır
     for (int i = 0; i < maxCount; i++)
     {
         if (startIndex + i < size)
         {
-            ilkdegerYaz(startIndex + i); // Düğümün ilk değerini yazdır
+            ilkdegerYaz(startIndex + i);
         }
         else
         {
-            cout << setw(10) << " "; // Boşluk
+            cout << setw(10) << " ";
         }
     }
 
     cout << endl;
 
-    // Çizgi yazdır
     satirCiz(startIndex, maxCount);
     cout << endl;
 
-    // Toplamları yazdır
     for (int i = 0; i < maxCount; i++)
     {
         if (startIndex + i < size)
         {
-            toplaVeYaz(startIndex + i); // Düğüm toplamını yazdır
+            toplaVeYaz(startIndex + i);
         }
         else
         {
-            cout << setw(10) << " "; // Boşluk
+            cout << setw(10) << " ";
         }
     }
 
     cout << endl;
 
-    // Çizgi yazdır
     satirCiz(startIndex, maxCount);
     cout << endl;
 
-    // Üçüncü değerleri yazdır
     for (int i = 0; i < maxCount; i++)
     {
         if (startIndex + i < size)
         {
-            ucuncudegerYaz(startIndex + i); // Düğümün üçüncü değerini yazdır
+            ucuncudegerYaz(startIndex + i);
         }
         else
         {
-            cout << setw(10) << " "; // Boşluk
+            cout << setw(10) << " ";
         }
     }
 
@@ -208,9 +186,9 @@ void LinkedList::removeAt(int index)
 
     if (index == 0)
     {
-        // İlk düğümü silme
+
         del = head;
-        head = head->next; // Yeni baş düğüm
+        head = head->next;
         if (size == 1)
         {
             last = head;
@@ -218,21 +196,20 @@ void LinkedList::removeAt(int index)
     }
     else
     {
-        // İlgili düğümü bulmak için önceki düğüme kadar ilerle
+
         ListNode *prv = getNodeAt(index - 1);
-        del = prv->next;       // Silinecek düğüm
-        prv->next = del->next; // Önceki düğümün bağlantısını güncelle
+        del = prv->next;
+        prv->next = del->next;
         if (del == last)
         {
             last = prv;
         }
     }
 
-    // Silinecek düğümün dinamik belleğini temizle
-    delete del->tree; // Özel veriyi (örneğin `BST`) temizle
-    delete del;       // Düğümü sil
+    delete del->tree;
+    delete del;
 
-    size--; // Listedeki düğüm sayısını azalt
+    size--;
 }
 void LinkedList::agacYaz(int index)
 {

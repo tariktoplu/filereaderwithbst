@@ -13,12 +13,9 @@ private:
 
     void cizgiYaz();
     void ilkdegerYaz(int);
-    void ikincidegerYaz(int);
     void ucuncudegerYaz(int);
     void satirCiz(int, int);
     void toplaVeYaz(int);
-    void boslukYaz(int);
-    void agacCizgiYaz(int);
 
 public:
     LinkedList();
