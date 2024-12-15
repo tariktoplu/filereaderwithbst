@@ -1,3 +1,12 @@
+/**
+ * @file                 QNode.hpp
+ * @description          Queue yapısı için gerekli fonksiyonlar ve değişkenler tanımlandı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
+
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
@@ -12,51 +21,12 @@ private:
     int length;
 
 public:
-    Queue()
-    {
-        front = back = NULL;
-        length = 0;
-    }
-    bool isEmpty() const
-    {
-        return length == 0;
-    }
-
-    void enqueue(Node *item)
-    {
-        QNode *last = new QNode(item);
-        if (isEmpty())
-            front = back = last;
-        else
-        {
-            back->next = last;
-            back = back->next;
-        }
-        length++;
-    }
-
-    Node *dequeue()
-    {
-        if (isEmpty())
-            throw "Queue is Empty";
-        QNode *tmp = front;
-        Node *item = front->item;
-        front = front->next;
-        delete tmp;
-        length--;
-        return item;
-    }
-
-    void clear()
-    {
-        while (!isEmpty())
-            dequeue();
-    }
-
-    ~Queue()
-    {
-        clear();
-    }
+    Queue();
+    bool isEmpty() const;
+    void enqueue(Node *item);
+    Node *dequeue();
+    void clear();
+    ~Queue();
 };
 
 #endif

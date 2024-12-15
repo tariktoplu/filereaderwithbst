@@ -5,6 +5,7 @@ derle:
 	g++ -I ./include/ -o ./lib/BSTNode.o -c ./src/BSTNode.cpp
 	g++ -I ./include/ -o ./lib/LinkedList.o -c ./src/LinkedList.cpp
 	g++ -I ./include/ -o ./lib/ListNode.o -c ./src/ListNode.cpp
+	g++ -I ./include/ -o ./lib/QNode.o -c ./src/QNode.cpp
 	g++ -I ./include/ -o ./bin/Main ./src/main.cpp ./lib/*.o
 	
 calistir:

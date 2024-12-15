@@ -1,24 +1,19 @@
-#ifndef BSTNODE_HPP
-#define BSTNODE_HPP
+/**
+ * @file                 BSTNode.cpp
+ * @description          BST düğümü için gerekli düğüm ve değişkenler tanımlandı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 
-#include <iostream>
-#include <cmath>
+#include "../include/BSTNode.hpp"
 
-class BSTNode
+// Node sınıfının constructor'ı
+Node::Node(const char &dt, Node *lf, Node *rg, int level)
 {
-public:
-    char data;
-    BSTNode *left;
-    BSTNode *right;
-    int level;
-
-    BSTNode(const char &dt, BSTNode *lf = NULL, BSTNode *rg = NULL, int level = 0)
-    {
-        data = dt;
-        left = lf;
-        right = rg;
-        level = level;
-    }
-};
-
-#endif
+    data = dt;
+    left = lf;
+    right = rg;
+    this->level = level;
+}

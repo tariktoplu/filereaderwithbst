@@ -1,8 +1,15 @@
+/**
+ * @file                 LinkedList.hpp
+ * @description          Tek yönlü bağlı liste yapısı için gerekli fonksiyonlar ve değişkenler tanımlandı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP
 
 #include "ListNode.hpp"
-/* linkedList temel kodlar bitti */
 
 class LinkedList
 {

@@ -1,0 +1,2 @@
+Programın istenen şekilde çalışması için "agaclar.txt" ana dizine atılmalıdır. Herhangi bir klasörün (bin, doc, include vb..) 
+içine atılması programda aksaklar meydana getirebilir. 

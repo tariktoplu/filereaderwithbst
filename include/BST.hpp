@@ -1,3 +1,11 @@
+/**
+ * @file                 BST.hpp
+ * @description          BST yapısı için gerekli fonksiyonlar ve değişkenler tanımlandı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 #ifndef BST_HPP
 #define BST_HPP
 

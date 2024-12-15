@@ -1,5 +1,5 @@
 #include "../include/LinkedList.hpp"
-#include "../include/queue.hpp"
+#include "Queue.cpp"
 #include <cmath>
 #include <iomanip>
 
