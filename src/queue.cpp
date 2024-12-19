@@ -1,5 +1,5 @@
 /**
- * @file                 queue.cpp
+ * @file                 Queue.cpp
  * @description          Queue yapısı için gerekli fonksiyonların içeriği yazıldı
  * @course               2A
  * @assignment           2
@@ -18,7 +18,12 @@ bool Queue::isEmpty() const
 {
     return length == 0;
 }
-
+Node *Queue::showfront() const
+{
+    if (isEmpty())
+        throw "Queue is Empty"; // Kuyruk boşsa hata fırlat
+    return front->item;         // Kuyruğun önündeki öğeyi döndür
+}
 void Queue::enqueue(Node *item)
 {
     QNode *last = new QNode(item);

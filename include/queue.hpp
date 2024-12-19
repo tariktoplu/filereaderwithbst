@@ -1,5 +1,5 @@
 /**
- * @file                 QNode.hpp
+ * @file                 Queue.hpp
  * @description          Queue yapısı için gerekli fonksiyonlar ve değişkenler tanımlandı
  * @course               2A
  * @assignment           2
@@ -26,6 +26,7 @@ public:
     void enqueue(Node *item);
     Node *dequeue();
     void clear();
+    Node *showfront() const;
     ~Queue();
 };
 

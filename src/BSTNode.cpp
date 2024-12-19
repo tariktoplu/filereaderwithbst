@@ -1,6 +1,6 @@
 /**
  * @file                 BSTNode.cpp
- * @description          BST düğümü için gerekli düğüm ve değişkenler tanımlandı
+ * @description          BST düğümü için gerekli düğümün kurucusu yazıldı
  * @course               2A
  * @assignment           2
  * @date                 08.12.2024

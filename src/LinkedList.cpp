@@ -1,3 +1,11 @@
+/**
+ * @file                 LinkedList.cpp
+ * @description          LinkedListin fonksiyonları yazıldı. Düğüm ve ağaç yazma burada yapılır
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 #include "../include/LinkedList.hpp"
 #include "Queue.cpp"
 #include <cmath>
@@ -139,16 +147,7 @@ void LinkedList::toplaVeYaz(int index)
     ListNode *currentNode = getNodeAt(index);
     BST *tree = currentNode->tree;
 
-    int solToplam = tree->getLeftSum() * 2;
-    int sagToplam = tree->getRightSum();
-    int kokDeger = tree->getRoot()->data;
-
-    for (int i = 0; i < 5; i++)
-    {
-        cout << " ";
-    }
-
-    cout << setw(10) << (solToplam + sagToplam + kokDeger);
+    cout << setw(15) << tree->toplam(tree->getRoot()) + tree->getRoot()->data;
 }
 void LinkedList::addNode(const BST &tree)
 {
@@ -246,6 +245,7 @@ void LinkedList::agacYaz(int index)
                 Node *current = q.dequeue();
                 if (current != nullptr)
                 {
+
                     cout << current->data;
                     q.enqueue(current->left);
                     q.enqueue(current->right);
@@ -271,8 +271,9 @@ void LinkedList::agacYaz(int index)
                 }
             }
         }
-
-        cout << endl;
+        cout << endl
+             << endl
+             << endl;
     }
 }
 

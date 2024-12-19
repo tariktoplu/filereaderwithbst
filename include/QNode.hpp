@@ -1,6 +1,6 @@
 /**
  * @file                 QNode.hpp
- * @description          Queue yapısı için gerekli düğüm tanımlanıp veri olarak BST düğümü
+ * @description          Queue yapısı için gerekli düğüm tanımlanıp veri olarak BST düğümü tutuldu
  * @course               2A
  * @assignment           2
  * @date                 08.12.2024

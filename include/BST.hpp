@@ -19,6 +19,7 @@ class BST
 private:
     Node *root;
     int size;
+    int sum;
 
     void SearchAndAdd(Node *&, const char &, int);
     bool SearchAndDelete(Node *&, const char &);
@@ -31,15 +32,11 @@ public:
     BST(const BST &);
     Node *CopyTree(Node *);
     void mirror(Node *root);
-    int hesaplaToplam(Node *);
-    int getLeftSum(Node *);
     void mirror();
-    int getRightSum(Node *);
-    int getLeftSum();
-    int getRightSum();
     bool isEmpty() const;
     void Add(const char &);
     void Delete(const char &);
+    int toplam(Node *);
 
     void levelorder();
     int Height();

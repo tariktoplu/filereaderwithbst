@@ -1,4 +1,14 @@
+/**
+ * @file                 BST.cpp
+ * @description          BST yapısı için gerekli fonksiyonlar yazıldı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 #include "BST.hpp"
+#include <iomanip>
+
 BST::BST(const BST &copyItem)
 {
     root = nullptr;
@@ -35,42 +45,25 @@ void BST::SearchAndAdd(Node *&subNode, const char &newItem, int level)
     else
         return;
 }
-int BST::hesaplaToplam(Node *root)
+int BST::toplam(Node *subNode)
 {
+    if (subNode == NULL)
+        return 0;
 
-    if (root == nullptr)
+    int sum = 0;
+
+    if (subNode->left != 0)
     {
-        return 0;
+        sum += 2 * subNode->left->data;
     }
+    if (subNode->right != 0)
+    {
+        sum += subNode->right->data;
+    }
+    sum += toplam(subNode->left);
+    sum += toplam(subNode->right);
 
-    int solDeger = hesaplaToplam(root->left) * 2;
-
-    int sagDeger = hesaplaToplam(root->right);
-
-    return (int)root->data + solDeger + sagDeger;
-}
-int BST::getLeftSum(Node *subNode)
-{
-    if (subNode == nullptr)
-        return 0;
-    return getLeftSum(subNode->left) + getLeftSum(subNode->right) + subNode->data;
-}
-
-int BST::getRightSum(Node *subNode)
-{
-    if (subNode == nullptr)
-        return 0;
-    return getRightSum(subNode->left) + getRightSum(subNode->right) + subNode->data;
-}
-
-int BST::getLeftSum()
-{
-    return getLeftSum(root);
-}
-
-int BST::getRightSum()
-{
-    return getRightSum(root);
+    return sum;
 }
 bool BST::SearchAndDelete(Node *&subNode, const char &data)
 {

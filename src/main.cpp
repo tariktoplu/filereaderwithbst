@@ -1,5 +1,12 @@
+/**
+ * @file                 main.cpp
+ * @description          Kullanıcıdan seçimler alınıp gerekli kontroller yapıldı
+ * @course               2A
+ * @assignment           2
+ * @date                 08.12.2024
+ * @author               Tarık Toplu tarikttoplu@gmail.com
+ */
 #include "../include/LinkedList.hpp"
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <iomanip>
@@ -16,14 +23,12 @@ void processFile(LinkedList *list)
 
     while (getline(inputFile, line))
     {
-        // Her satırı bir BST'ye ekle
         BST *tree = new BST();
 
-        // Karakterleri doğrudan işleme
         for (auto it = line.begin(); it != line.end(); ++it)
         {
-            char ch = *it; // Iterator ile karakteri al
-            tree->Add(ch); // Her karakteri BST'ye ekle
+            char ch = *it;
+            tree->Add(ch);
         }
         list->addNode(*tree);
 
@@ -54,7 +59,7 @@ int main()
 
         if (secim == 'x' || secim == 'X')
         {
-            break; // Programdan çık
+            break;
         }
         else if (secim == 'a' || secim == 'A')
         {
