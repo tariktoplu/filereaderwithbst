@@ -7,7 +7,6 @@
  * @author               Tarık Toplu tarikttoplu@gmail.com
  */
 #include "BST.hpp"
-#include <iomanip>
 
 BST::BST(const BST &copyItem)
 {

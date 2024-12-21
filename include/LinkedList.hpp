@@ -11,6 +11,8 @@
 
 #include "ListNode.hpp"
 
+static const int GENISLIK = 100;
+static const int YUKSEKLIK = 20;
 class LinkedList
 {
 private:

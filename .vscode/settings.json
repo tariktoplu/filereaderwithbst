@@ -53,6 +53,12 @@
     "xtr1common": "cpp",
     "iomanip": "cpp",
     "queue": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "optional": "cpp",
+    "ranges": "cpp",
+    "span": "cpp",
+    "vector": "cpp"
   }
 }
