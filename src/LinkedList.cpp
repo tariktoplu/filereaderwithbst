@@ -12,9 +12,6 @@
 #include <iomanip>
 #include <iostream>
 
-/* static const int GENISLIK = 100;
-static const int YUKSEKLIK = 20; */
-
 LinkedList::LinkedList() : head(nullptr), last(head), size(0) {}
 
 LinkedList::~LinkedList() { clear(); }
